@@ -1,0 +1,31 @@
+select * from clients_clientinfo cc where id=142
+
+select * from clients_clientinfo cc  where name like '%TEST%'
+
+select * from clients_clientinfo cc  where name ilike '%TEST%'
+
+select * from clients_clientinfo cc  where id > 100 and id < 300 order by id desc 
+
+select * from clients_clientinfo cc where id between 100 and 300 order by id
+
+select * from clients_clientinfo cc where id=300 or id=142 or id=287
+
+select * from clients_clientinfo cc  where id in (300,142,287)
+
+select * from  clients_clientinfo cc where country is null
+
+select * from  clients_clientinfo cc where country is not null
+
+select * from clients_clientinfo cc  where name='adidas'
+
+select * from  clients_country cc2 inner join clients_clientinfo cc on cc.country = cc2."name" where cc.country  ilike 'germany'
+
+select Count(country),country, Max(id),Min(id) from clients_clientinfo cc group by country 
+
+select count(*) Number_of_client from clients_clientinfo cc 
+
+select count(*),country  from clients_clientinfo cc where id < 350 group by country having count(*)>14
+
+select * from  clients_country cc2 full join clients_clientinfo cc on cc.country = cc2."name"
+
+select * from  clients_country cc2 left join clients_clientinfo cc on cc.country = cc2."name"
